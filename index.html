@@ -174,19 +174,19 @@
 			<div class="d-flex flex-wrap col-wrap-2">
 				<div class="wrapper">
 					<div class="img-wrap">
-						<img src="img/projects/project-1.png" class="img-responsive">
+						<img src="img/projects/project-1.PNG" class="img-responsive">
 					</div>
 					<h2 class="title-2">Pedestal Labs</h2>
 				</div>
 				<div class="wrapper">
 					<div class="img-wrap">
-						<img src="img/projects/project-2.png" class="img-responsive">
+						<img src="img/projects/project-2.PNG" class="img-responsive">
 					</div>
 					<h2 class="title-2">Ost talent</h2>
 				</div>
 				<div class="wrapper">
 					<div class="img-wrap">
-						<img src="img/projects/project-3.png" class="img-responsive">
+						<img src="img/projects/project-3.PNG" class="img-responsive">
 					</div>
 					<h2 class="title-2">Persia Darbar</h2>
 				</div>
