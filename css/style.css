@@ -20,7 +20,7 @@ html,body {
 }
 header{width: calc(100% - 6rem); margin: auto; left: 0; right: 0; padding: 2rem 0; font-size: 2.4rem; position: fixed; z-index: 1}
 .container{margin:0 10rem; width:calc(100% - 16rem);padding:0rem 8rem;}
-.container{margin:0 auto;width: 100%; max-width:1100px;padding:0rem 8rem;}
+.container{margin:0 auto; max-width:1100px;padding:0rem 8rem;}
 .d-flex{display:flex;}
 .flex-wrap{flex-wrap:wrap;}
 .align-center{align-items:center;}
@@ -33,7 +33,6 @@ header{width: calc(100% - 6rem); margin: auto; left: 0; right: 0; padding: 2rem 
 .h-100{height: 100%;}
 .img-responsive{width: 100%;}
 .dark-section{background-color: #121212;color: #fff;}
-/*#9497994d*/
 .title {color: #95989a; font-size: 18px; text-transform: uppercase; opacity: .5; }
 .heading {font-size: 100px; padding: 70px 0 50px; font-weight: 500;position: relative;}
 .description{font-size: 1.4rem;color: #95989a;margin-bottom: 30px; line-height: 1.5}
@@ -42,7 +41,8 @@ header{width: calc(100% - 6rem); margin: auto; left: 0; right: 0; padding: 2rem 
 .scroll {position: absolute; bottom: 6%; left: 0; right: 0; text-align: center; font-size: 1.2rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; display: block; width: max-content; margin: auto; }
 /*1. Home*/
 .home .container{border-color: transparent; }
-.home .heading{padding: 50px 0 30px; font-size: 120px; opacity: 1}
+/*.home .heading{padding: 50px 0 30px; font-size: 120px; opacity: 1}*/
+.home .heading{padding: 50px 0 30px; font-size: 9vw; opacity: 1}
 .home .description{color: #95989a; text-transform: uppercase; line-height: 1.5rem; letter-spacing: .22rem; font-size: 1.8rem; opacity: .5; }
 
 /*2. About me*/
@@ -110,7 +110,7 @@ ul li:hover  span {height: 20px; width: 20px; margin: -13px 0 0 -9px; border-rad
 }
 .text-wrap{position: relative;}
 .text-wrap .index-1{display: flex; flex-direction: column; justify-content: space-between; height: 209px; margin-top: 94px; }
-.full-stop {position: absolute; bottom: calc(50% - 145px/2); right: calc(50% - 680px/2); width: 10px; height: 10px; background: #111; }
+.full-stop {position: absolute; bottom: calc(50% - 145px/2); right: 25vw; width: 10px; height: 10px; background: #111; }
 .index-1{position: relative; z-index: 1; }
 .scroll{color: #222; transform: rotateZ(90deg); transform: translate(-50%,-50%); }
 .scroll span:nth-child(2) {animation-delay: -0.2s; }
@@ -185,4 +185,44 @@ ul li:hover  span {height: 20px; width: 20px; margin: -13px 0 0 -9px; border-rad
 #experience .title-2{
   font-size: 1.4rem;
   margin-bottom: 16px;
+}
+.d-sm-block{display: none;}
+@media (max-width: 1100px){
+  .heading{font-size: 80px;}
+  .about-me .col-wrap-2 .wrapper {width: calc(50%); margin: 0 8rem 5rem; }
+  .about-me .col-wrap-2 .wrapper:nth-child(even){margin-left:auto;margin-right: 0; }
+  .add-wrap{padding-top: 120px;}
+  .contact-us .heading{font-size: 69px; text-align: left;}
+  .contact-us .description{display: flex;}
+  .contact-us .social-wrap{    margin-right: 0; width: 50%}
+  .home .title.skills-title {letter-spacing: 1px; }
+  .about-me .am-img{max-width: 400px}
+  .wrapper {width: 100%; }
+}
+@media (max-width: 950px){
+  .contact-us .heading {font-size: 50px; text-align: left; }
+  .contact-us .col-2{width: 100%;}
+  .contact-us .col-wraper{flex-direction: column;}
+  .add-wrap {padding-top: 0; display: flex; justify-content: space-between; }
+}
+@media (max-width: 768px){
+  .add-wrap,.d-mb-col{flex-direction: column;}
+  .order-mb-2{order:2;}
+  .contact-us .social-wrap{padding: 0 4rem}
+  .add-wrap .mb-6{margin-bottom: 0}
+  .contact-us .heading{padding-top: 20px;}
+  .home .heading{padding-bottom: 30px;}
+  .container{padding: 0rem 4rem;}
+  .home .title{line-height: 1.4}
+  .wrapper{margin: 0;}
+}
+@media (max-width: 599px){
+  .container{width: 100%;}
+  .heading {
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+  .d-sm-block{display: block;}
+  .contact-us .heading{font-size: 30px;}
+  .home .title {line-height: 1.4; font-size: 12px; } 
 }
