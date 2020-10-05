@@ -16,7 +16,7 @@ $(function () {
 
 	menuItems.click(function(e){
 	  var href = $(this).attr("href"),
-	      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+	      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + sh  + 1;
 	  $('html, body').stop().animate({ 
 	      scrollTop: offsetTop
 	  }, 300);
@@ -48,9 +48,10 @@ $(function () {
 						.to(".scroll",0.6,{color:'#111',opacity:0,display:'none'},'shrink-fullstop')
 					    .to(".full-stop",0.6,{display:'none'},'shrink-fullstop')
 						.to(".home .heading",0.6,{color:'#111'},'shrink-fullstop')
-						.to(".home .heading",0.6,{scale:0.3,left:'-43px',color:'#111'},'ani-2')
+						.to(".home .heading",0.6,{fontSize:'25px',left:'20px',color:'#111'},'ani-2')
 				   		.to(".text-2,.home .title",0.6,{width:0,opacity:-1,display:'none'},'ani-2')
-		       			.to(".home .heading",0.5,{scale:0.2,bottom:'81vh'})
+				   		.to(".about-nav li",0.6,{opacity:0},'ani-02')
+		       			.to(".home .heading",0.5,{fontSize:'25px',left:'20px',scale:1,bottom:'90vh'},'ani-02')
 
 	var page1_scene =  new ScrollMagic.Scene({
 			triggerElement: ".home",
@@ -86,8 +87,8 @@ $(function () {
 		.on('start progess', function (event) {
 			// console.log(event);
 			if (event.scrollDirection == 'FORWARD') {
-		  		page3.resume();
 		  		page3.time(0);
+		  		page3.resume();
 			}else if (event.scrollDirection == 'REVERSE') {
 		  		page3.pause();
 		  		// page8.time(0);
@@ -120,6 +121,7 @@ $(function () {
 	var page5 	   = new TimelineMax()
 					    .from("#experience .heading", 1.5, {y:20,opacity:0})
 					    .from("#experience .title-2", 1, {x:-20,opacity:0},'ani-5')
+					    .from("#experience .title-3", 1, {x:-20,opacity:0},'ani-5')
 					    .from("#experience .description",1, {y:20,opacity:0},'ani-5')
 
 	var page5_scene =  new ScrollMagic.Scene({
@@ -145,7 +147,7 @@ $(function () {
 					    .from(".projects .heading", 1, {opacity:0,x:-100},'ani-8')
 					    .from(".projects .description", 1, {opacity:0,y:-30},'ani-8')
 						.staggerFrom(".projects .img-wrap img", 1, { y: 275 }, 1, "ani-8")
-						.staggerFrom(".projects .title-2", 1, { x: -275}, 2, "ani-8")
+						.staggerFrom(".projects .title-2", 1, { x: -275}, 1, "ani-8")
 					    .to("body", 1, {overflow:'auto'})
 
 	var page6_scene =  new ScrollMagic.Scene({
@@ -194,7 +196,7 @@ $(function () {
 					    .from(".contact-us .heading", 2.5, {opacity:0,x:-30},'ani-10')
 					    .from(".contact-us .title-2", 2.5, {opacity:0,x:-30},'ani-10')
 					    .from(".contact-us .description", 2.5, {opacity:0,x:-30},'ani-10')
-					    .from(".contact-us .btn-primary,.contact-us .title", 2.5, {opacity:0},'ani-11')
+					    .from(".contact-us .btn-primary,.contact-us .title", 2.5, {opacity:0},'ani-10')
 					    .to("body", 0.1, {overflow:'auto'})
 	
 	var page8_scene =  new ScrollMagic.Scene({
@@ -216,6 +218,5 @@ $(function () {
 		.setTween(page8)
 
 // -------------------------------------------------------------------------------------------
-
-	controller.addScene([page1_scene, page3_scene, page4_scene, page5_scene, page6_scene, page7_scene, page8_scene])
+		controller.addScene([page1_scene, page3_scene, page4_scene, page5_scene, page6_scene, page7_scene, page8_scene])
 });
