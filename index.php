@@ -33,7 +33,7 @@
 	<div class="full-stop"></div>
 	<div class="container h-100 d-flex align-center">
 		<div class="text-wrap">
-			<div class="index-1">
+			<div class="index-1 d-sm-block">
 				<p class="title">Hi there, I am</p>
 				<h1 class="heading">
 					D<span class="text-2">ISHA&nbsp;</span>M<span class="text-2">EHTA</span></h1>				
@@ -64,7 +64,7 @@
 			<div class="hv-left"></div>		
 			<div id="about-me">
 				<h1 class="heading">About Me</h1>
-				<div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-between d-mb-col">
 					<div class="wrapper">
 						<p class="description">
 							Hi! My name is Disha Mehta and I am a full-time frontend developer who specializes in creating dynamic and beautiful web pages. I have been in the field for nearly 3 years, and have been loving every minute of it. I started learning programming languages in the 1st year of my junior college, fascinated by the ability of a code to give such beautiful outputs I chose to be a developer, I graduated in 2017 with a bachelor’s degree in computer science and Technology and considers myself a ‘forever student,’ eager to both improve my existing aptitudes and stay in tune with the latest technology
@@ -174,19 +174,19 @@
 			<div class="d-flex flex-wrap col-wrap-2">
 				<div class="wrapper">
 					<div class="img-wrap">
-						<img src="img/projects/project-1.PNG" class="img-responsive">
+						<img src="img/projects/project-1.png" class="img-responsive">
 					</div>
 					<h2 class="title-2">Pedestal Labs</h2>
 				</div>
 				<div class="wrapper">
 					<div class="img-wrap">
-						<img src="img/projects/project-2.PNG" class="img-responsive">
+						<img src="img/projects/project-2.png" class="img-responsive">
 					</div>
 					<h2 class="title-2">Ost talent</h2>
 				</div>
 				<div class="wrapper">
 					<div class="img-wrap">
-						<img src="img/projects/project-3.PNG" class="img-responsive">
+						<img src="img/projects/project-3.png" class="img-responsive">
 					</div>
 					<h2 class="title-2">Persia Darbar</h2>
 				</div>
@@ -199,12 +199,12 @@
 	<div class="container h-100 p-relative">
 		<div class="hv-left"></div>
 		<div class="row h-100 d-flex flex-column justify-center">
-			<div class="d-flex justify-content-between align-center">
+			<div class="d-flex justify-content-between align-center col-wraper">
 				<div class="col-2">
 					<p class="title">Get in Touch</p>						
 					<h1 class="heading">How can I help you today?</h1>
 				</div>
-				<div class="col-2">
+				<div class="col-2 add-wrap">
 					<div class="mb-6">
 						<p class="title-2">Address</p>
 						<p class="description">Rawalpada, Daishar(E), <br> Mumbai- 400068</p>
@@ -215,8 +215,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="d-flex">
-				<div class="col-2">
+			<div class="d-flex d-mb-col">
+				<div class="col-2 order-mb-2">
 					<button class="btn-primary">Quick Contact</button>
 				</div>
 				<div class="wrapper social-wrap">
