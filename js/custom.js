@@ -1,4 +1,7 @@
-$(function () {
+$("body").prepend('<div id="preloader"><span class="loader"><span class="loader-inner"></span></span></div>');
+$(document).ready(function() {
+    $("#preloader").remove();
+	$(this).scrollTop(0);
 	var sH = $(window).height();
 	var sW = $(window).width();
 	var controller = new ScrollMagic.Controller();
@@ -6,9 +9,7 @@ $(function () {
 	var lastId,
 	    topMenu = $(".about-nav"),
 	    topMenuHeight = topMenu.outerHeight() + 15,
-	    // All list items
 	    menuItems = topMenu.find("a"),
-	    // Anchors corresponding to menu items
 	    scrollItems = menuItems.map(function(){
 	      var item = $($(this).attr("href"));
 	      if (item.length) { return item; }
@@ -40,38 +41,59 @@ $(function () {
 	   }                   
 	});
 
-// -------------------------------------------------------------------------------------------
+	if($(window).width() > 1100){
+		$headingAlignmnet = '-610';
+	}else if($(window).width() > 768){
+		$headingAlignmnet = -($(window).width()/2) + 20;
+	}else{
+		$headingAlignmnet = -($(window).width() - 160)/2 - 68;
 
+	}
+		// -------------------------------------------------------------------------------------------
 	var page1 	   = new TimelineMax()
 						.from(".full-stop",0.6,{bottom:'0',right:'0',width:'100vw',height:'100vh'},'shrink-fullstop')
 						.to(".social svg path",0.6,{fill:'#111'},'shrink-fullstop')
 						.to(".scroll",0.6,{color:'#111',opacity:0,display:'none'},'shrink-fullstop')
 					    .to(".full-stop",0.6,{display:'none'},'shrink-fullstop')
 						.to(".home .heading",0.6,{color:'#111'},'shrink-fullstop')
-						.to(".home .heading",0.6,{fontSize:'25px',left:'20px',color:'#111'},'ani-2')
-				   		.to(".text-2,.home .title",0.6,{width:0,opacity:-1,display:'none'},'ani-2')
+						.to(".home .heading",0.6,{fontSize:'25px',left:'50%',marginLeft:$headingAlignmnet,color:'#111'},'ani-2')
+				   		.to(".text-2,.home .title",0.6,{width:0,minWidth:0,opacity:-1,display:'none'},'ani-2')
 				   		.to(".about-nav li",0.6,{opacity:0},'ani-02')
-		       			.to(".home .heading",0.5,{fontSize:'25px',left:'20px',scale:1,bottom:'90vh'},'ani-02')
+		       			.to(".home .heading",0.5,{fontSize:'25px',left:'50%',scale:1,bottom:'92vh'},'ani-02')
 
-	var page1_scene =  new ScrollMagic.Scene({
-			triggerElement: ".home",
-			duration: '100%',
-			reverse:5,
-			triggerHook:0
-		})
-		// .addIndicators()
-		.setPin(".home")
-		.setTween(page1)
-// -------------------------------------------------------------------------------------------
+	if($(window).width() > 599){
+		var page1_scene =  new ScrollMagic.Scene({
+				triggerElement: ".home",
+				duration: '100%',
+				reverse:5,
+				triggerHook:0
+			})
+			// .addIndicators()
+			.setPin(".home")
+			.setTween(page1)
+	}else{
+
+		var page1_scene =  new ScrollMagic.Scene({
+				triggerElement: ".home",
+				duration: '15%',
+				reverse:5,
+				triggerHook:0
+			})
+			// .addIndicators()
+			.setPin(".home")
+			.setTween(page1)
+
+	}
+
+
+		// -------------------------------------------------------------------------------------------
 
 	var page3 	   = new TimelineMax()
 					    .to("body", 0.1, {overflow:'hidden'})
 					    .to(window, 1,{scrollTo:{y:$('.about-me')}})
-					    // .to(".about-me", 1, {opacity:1,top:'-100vh'})
 					    .from(".about-me .hv-right", 1.5, {height:0},'ani-4')
 					    .from(".about-me .hv-left", 0.5, {top:'100vh'},'ani-4')
-					    // .to(".heading", 0.5, {color:'#fff'},'ani-4')
-					    .staggerFrom(".about-nav li", 1, {ease: Back.easeOut.config(1.4), y: -150,opacity:0 }, 0.35, "ani-5")
+					    .staggerFrom(".about-nav li", 1, {ease: Back.easeOut.config(1.4), y: '-100vh',opacity:0 }, 0.35, "ani-5")
 					    .from("#about-me .heading", 1, {opacity:0,x:-100},'ani-5')
 					    .from("#about-me .wrapper", 1, {opacity:0,y:-100},'ani-5')
 					    .from("#about-me .am-img", 1, {opacity:0,x:100},'ani-5')
@@ -94,11 +116,9 @@ $(function () {
 		  		// page8.time(0);
 			}
 		})
-
-		// .addIndicators()
 		.setTween(page3)
 
-// -------------------------------------------------------------------------------------------
+		// -------------------------------------------------------------------------------------------
 
 	var page4 	   = new TimelineMax()
 					    .from("#education .heading", 1, {y:50,opacity:0})
@@ -116,7 +136,7 @@ $(function () {
 		// .addIndicators()
 		.setTween(page4)
 
-// -------------------------------------------------------------------------------------------
+		// -------------------------------------------------------------------------------------------
 
 	var page5 	   = new TimelineMax()
 					    .from("#experience .heading", 1.5, {y:20,opacity:0})
@@ -135,7 +155,7 @@ $(function () {
 		// .addIndicators({name:'experience'})
 		.setTween(page5)
 
-// -------------------------------------------------------------------------------------------
+		// -------------------------------------------------------------------------------------------
 
 	var page6 	   = new TimelineMax({delay:0.2})
 					    .to("body", 0.1, {overflow:'hidden'},'ani-6')
@@ -146,8 +166,9 @@ $(function () {
 					    .from(".projects .hv-left", 1.25, {top:'100vh'},'ani-7')
 					    .from(".projects .heading", 1, {opacity:0,x:-100},'ani-8')
 					    .from(".projects .description", 1, {opacity:0,y:-30},'ani-8')
-						.staggerFrom(".projects .img-wrap img", 1, { y: 275 }, 1, "ani-8")
 						.staggerFrom(".projects .title-2", 1, { x: -275}, 1, "ani-8")
+						.to(".projects .img-wrap.left-right img", 1, {rotationY:180,opacity:1}, "ani-8")
+						.to(".projects .img-wrap.top-bottom img", 1, {rotationX:180,opacity:1}, "ani-8")
 					    .to("body", 1, {overflow:'auto'})
 
 	var page6_scene =  new ScrollMagic.Scene({
@@ -173,7 +194,7 @@ $(function () {
 		// .addIndicators({name:'projects'})
 		.setTween(page6)
 
-// -------------------------------------------------------------------------------------------
+		// -------------------------------------------------------------------------------------------
 
 	var page7 	   = new TimelineMax({delay:1})
 	
@@ -185,13 +206,13 @@ $(function () {
 		// .addIndicators({name:'projects images'})
 		.setTween(page7)
 
-// -------------------------------------------------------------------------------------------
+		// -------------------------------------------------------------------------------------------
 
 	var page8 	   = new TimelineMax()
 					    .to("body", 0.1, {overflow:'hidden'})
 					    .to(window, 1,{scrollTo:{y:$('.contact-us')}})
-					    .from(".contact-us .hv-right", 1.25, {height:0},'ani-9')
-					    .from(".contact-us .hv-left", 1.25, {top:'100vh'},'ani-9')
+					    .from(".contact-us .hv-right", 1, {height:0},'ani-9')
+					    .from(".contact-us .hv-left", 1, {top:'100vh'},'ani-9')
 					    .to(".home .heading", 0.1, {color:'#fff'})
 					    .from(".contact-us .heading", 2.5, {opacity:0,x:-30},'ani-10')
 					    .from(".contact-us .title-2", 2.5, {opacity:0,x:-30},'ani-10')
@@ -217,6 +238,6 @@ $(function () {
 		// .addIndicators({name:'contact us'})
 		.setTween(page8)
 
-// -------------------------------------------------------------------------------------------
+		// -------------------------------------------------------------------------------------------
 		controller.addScene([page1_scene, page3_scene, page4_scene, page5_scene, page6_scene, page7_scene, page8_scene])
 });
