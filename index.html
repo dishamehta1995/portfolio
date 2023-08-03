@@ -7,7 +7,7 @@
 	<link rel="shortcut icon" href="https://mehtadisha.in/favicon/favicon.ico">
 		<!-- Primary Meta Tags -->
 	<meta name="title" content="Disha Mehta | Portfolio">
-	<meta name="description" content="Professional Frontend Developer & Freelancer. Experties in Javascript, Wordpress, Reactjs, HTML5, CSS3. 3+ years of experince in Web development, Building animations, interactive websites and web pages.">
+	<meta name="description" content="Professional Frontend Developer & Freelancer. Experties in Javascript, Wordpress, Reactjs, HTML5, CSS3. 5+ years of experince in Web development, Building animations, interactive websites and web pages.">
 	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 	<meta name="keywords" content="Disha Mehta, frontend developer, ui developer, HTML5, CSS3, animations, javascript, WordPress, freelancer" />
 	<link rel="canonical" href="https://www.mehtadisha.in/" />
@@ -16,13 +16,13 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://mehtadisha.in/">
 	<meta property="og:title" content="Disha Mehta | Portfolio">
-	<meta property="og:description" content="Professional Frontend Developer & Freelancer. Expertise in JavaScript, WordPress, Reactjs, HTML5, CSS3. 3+ years of experience in Web development, Building animations, interactive websites and web pages.">
+	<meta property="og:description" content="Professional Frontend Developer & Freelancer. Expertise in JavaScript, WordPress, Reactjs, HTML5, CSS3. 5+ years of experience in Web development, Building animations, interactive websites and web pages.">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://mehtadisha.in/">
 	<meta property="twitter:title" content="Disha Mehta | Portfolio">
-	<meta property="twitter:description" content="Professional Frontend Developer & Freelancer. Expertise in JavaScript, WordPress, Reactjs, HTML5, CSS3. 3+ years of experience in Web development, Building animations, interactive websites and web pages.">
+	<meta property="twitter:description" content="Professional Frontend Developer & Freelancer. Expertise in JavaScript, WordPress, Reactjs, HTML5, CSS3. 5+ years of experience in Web development, Building animations, interactive websites and web pages.">
 	<meta property="twitter:image" content="mehtadisha.in/img/dishamehta.png">
 
 	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon.png">
@@ -111,7 +111,7 @@
 				<div class="d-flex justify-content-between d-mb-col">
 					<div class="wrapper">
 						<p class="description">
-							Hi! I am a full-time frontend developer who specializes in creating dynamic web pages. I have been in the field for nearly 3 years, and have been loving every minute of it. I graduated in 2017 with a bachelor’s degree in computer science and Technology and considers myself a ‘forever student,’ eager to both improve my existing aptitudes and stay in tune with the latest technology
+							Hi! I am a full-time frontend developer who specializes in creating dynamic web pages. I have been in the field for nearly <span id="total-years"></span> years, and have been loving every minute of it. I graduated in 2017 with a bachelor’s degree in computer science and Technology and considers myself a ‘forever student,’ eager to both improve my existing aptitudes and stay in tune with the latest technology
 						</p>
 
 						<p class="description">
@@ -180,22 +180,32 @@
 						</ul>
 					</div>
 					<div class="wrapper">
-						<h2 class="title-2">Gozoop Pvt Ltd</h2>
+						<h2 class="title-2">Media.Net Software Services Pvt Ltd</h2>
 						<p class="title-3">UI Developer</p>
-						<p class="title-3">Sep 2018 - March 2019</p>
+						<p class="title-3">April 2019 - June 21</p>
 						<ul class="description list">
 							<li>
-								Implement 3D animations using Three.js, Gsap etc for development of mobile responsive website, Create and maintain impressive pages and site frameworks. Responsible for setting coding standards and perform code review.
+								Implementation of browser extensions, WordPress plugins, html units. Work closely with design and team to roll out websites Hosting and Maintenance of websites, Campaign Landing pages. Perform code review, Unit testing and keeping application and libraries updated and using best development practices. Participate in knowledge sharing session
 							</li>
 						</ul>
 					</div>
 					<div class="wrapper">
-						<h2 class="title-2">Media.Net Software Services Pvt Ltd</h2>
-						<p class="title-3">UI Developer</p>
-						<p class="title-3">April 2019 - Present</p>
+						<h2 class="title-2">Amdocs LPP, Pune</h2>
+						<p class="title-3">Software Developer II</p>
+						<p class="title-3">June 21 - March 22</p>
 						<ul class="description list">
 							<li>
-								Implementation of browser extensions, WordPress plugins, html units. Work closely with design and team to roll out websites Hosting and Maintenance of websites, Campaign Landing pages. Perform code review, Unit testing and keeping application and libraries updated and using best development practices. Participate in knowledge sharing session
+								Responsible for the development, modification, debugging, and maintenance of software systems using ReactJS and Redux. Perform code reviews and unit testing to ensure the quality of the codebase, as well as keeping applications and libraries up to date. Additionally, Proficient in integrating Continuous Integration/Continuous Deployment (CI/CD)
+							</li>
+						</ul>
+					</div>
+					<div class="wrapper">
+						<h2 class="title-2">Target Corporation</h2>
+						<p class="title-3">Software Developer V</p>
+						<p class="title-3">June 22 - Present</p>
+						<ul class="description list">
+							<li>
+								Work collaboratively with product, design, architects, and development leads, as well as UX teams, to deliver exceptional and user-friendly UI experiences. Document and develop best practices for application development and deployment, contributing to the growth of their team. Additionally, Participating in complex and cross-functional projects, translating project requirements into technical solutions. Write high-quality code and test cases in Cypress and Jest to ensure defect-free applications. Troubleshooting business and production issues to gather and evaluate information to resolve problems effectively. Build customizable, reusable, and accessible cross-platform frontend components using ReactJS, Typescript, NextJS, and React Queries. Implement best practices and design patterns, further enhancing the quality and maintainability of their codebase. Actively contribute to the growth of their team by conducting interviews, training, and mentoring junior developers and new joiners.
 							</li>
 						</ul>
 					</div>
@@ -288,7 +298,10 @@
 		<div class="hv-right"></div>
 	</div>
 </section>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>
+        document.getElementById('total-years').innerText = (new Date().getFullYear() - 2017) 
+    </script>	
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="js/gsap.min.js"></script>
 	<script type="text/javascript" src="js/scroll-magic.js"></script>
 	<script src="js/ScrollToPlugin.min.js"></script>
